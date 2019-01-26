@@ -20,7 +20,7 @@ namespace VectorLibrary
     */
     public struct Calculator
     {
-        // property 
+        // property X holds number 
         public double X { get; }
 
         // overloaded constructor which takes one parameter
