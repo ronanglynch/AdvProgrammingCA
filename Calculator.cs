@@ -21,7 +21,7 @@ namespace VectorLibrary
     public struct Calculator
     {
         // property X holds number 
-        public double X { get; }
+        public double X { get; set; }
 
         // overloaded constructor which takes one parameter
         public Calculator(double x)
@@ -53,7 +53,7 @@ namespace VectorLibrary
             // control to ensure that the denonimator is not zero (infinity)
             if (y.X == 0)
             {
-                Console.WriteLine("Dividing by Zero...Infinity");
+                Console.WriteLine("Cannot Dividing by Zero...Infinity");
                 return 0;
             }
             else
