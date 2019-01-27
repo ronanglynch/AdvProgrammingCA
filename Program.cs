@@ -1,4 +1,5 @@
-﻿using System;
+﻿/* Program for a user to test the calculation operation */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace CalcLibrary
 {
     class Program
     {
+        // function to display user menu
         public static void Menu()
         {
             Console.WriteLine("Select Calculation Operation to test...");
@@ -24,11 +26,11 @@ namespace CalcLibrary
             Console.WriteLine("8. Power");
             Console.WriteLine("9. SquareRoot");
             Console.WriteLine("10. Subtract");
-            
+
 
         }
 
-
+        // request the user to enter a number. 
         public static double getNumber()
         {
             double num = 0;
@@ -36,6 +38,7 @@ namespace CalcLibrary
             Console.WriteLine("Enter Number: ");
             bool Isvalid = double.TryParse(Console.ReadLine(), out num);
 
+            /*loop control to ensure a valid number is entered */
             while (!Isvalid)
             {
                 Console.WriteLine("Invalid selecton...try again!\nEnter Number: ");
@@ -49,16 +52,20 @@ namespace CalcLibrary
 
         static void Main(string[] args)
         {
-            // Calculator calcTest = new Calculator();
-            int selection = -1;
-            Calculator calc1 = new Calculator();
+            int selection = -1; // selection to hold user choice operation from menu
+            Calculator calc1 = new Calculator();    // Calculator objects are used to hold first  & second number of operation
             Calculator calc2 = new Calculator();
-            bool Isvalid;
+            bool Isvalid = false; // control to ensure a valid int is entered from Menu
 
-            Menu();
-            Isvalid = int.TryParse(Console.ReadLine(), out selection);
+            // ensure a valid user selection is entered
+            while (!Isvalid)
+            {
+                Menu(); // displays the User Menu
+                Isvalid = int.TryParse(Console.ReadLine(), out selection);
+            }
 
-            while (selection !=0)
+            // * code continues until user enters 0 to exit
+            while (selection != 0)
             {
 
 
@@ -69,7 +76,7 @@ namespace CalcLibrary
                     Isvalid = int.TryParse(Console.ReadLine(), out selection);
                 }
 
-
+                /*takes the user selected operation and calls respective method from Calculator class */
                 switch (selection)
                 {
                     case 1:
@@ -147,24 +154,24 @@ namespace CalcLibrary
 
                 Console.WriteLine("Any key to continue...or \"0\"(zero) to finish");
 
-                Isvalid = int.TryParse(Console.ReadLine(),out selection);
+                /* Block of code to check if user wants to exit or proceed with another operation */
+                Isvalid = int.TryParse(Console.ReadLine(), out selection);
                 if (!Isvalid)
                 {
                     selection = -1;
                 }
 
-                if (selection != 0) {
+                if (selection != 0)
+                {
                     Menu();
                     Isvalid = int.TryParse(Console.ReadLine(), out selection);
                 }
-                
-
 
 
             }
 
-            Console.WriteLine("\nAny key to finish...");
 
+            Console.WriteLine("\nAny key to finish...");
             Console.ReadLine();
         }
     }

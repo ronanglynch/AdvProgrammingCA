@@ -83,13 +83,13 @@ namespace VectorLibrary
             /*  x is the base and y is the power e.g x^y
                 control to ensure that the operation does not compute zero to power of a negative number (infinity)
             */
-            if (x.X == 0 && y.X <=0)
+            if (x.X == 0 && y.X <= 0)
             {
                 Console.WriteLine("Error, can't generate a number: zero to power of negative number...Infinity");
                 return 0;
             }
             else
-            {                
+            {
                 return (Math.Pow(x.X, y.X));
             }
         }
@@ -102,8 +102,8 @@ namespace VectorLibrary
 
         // exp method takes 1 Calculator argument and return exponential on a number
         public static double exp(Calculator x)
-        {           
-                return Math.Exp(x.X);            
+        {
+            return Math.Exp(x.X);
         }
 
         // log method takes 1 Calculator argument and returns Log base 10 of a number e.g Log(100) =2
@@ -125,7 +125,7 @@ namespace VectorLibrary
         public static double sqrt(Calculator x)
         {
             // control: error when calculating the Square Root of negative number
-            if (x.X <=0)
+            if (x.X <= 0)
             {
                 Console.WriteLine("Error, cannot calculate square root of negative num!");
                 return 0;

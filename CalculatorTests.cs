@@ -186,7 +186,7 @@ namespace VectorLibraryTests
             Assert.AreEqual(-1, sumMinus1_Mod_10);
             Assert.AreEqual(4, sum9_Mod_5);
         }
-                     
+
 
         [TestMethod]
         public void MultiplyNumbers()
